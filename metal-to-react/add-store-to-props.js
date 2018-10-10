@@ -1,5 +1,4 @@
 /**
- * A transform that merges STORE props into PROPS
  *
  * It should convert this:
  *

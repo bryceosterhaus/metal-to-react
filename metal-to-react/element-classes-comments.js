@@ -1,5 +1,4 @@
 /**
- * A transform that adds comments to uses of elementClasses
  *
  * It should convert this:
  *
@@ -15,8 +14,8 @@
  *   </MyComponent>
  *
  * To this:
- *   /* METAL_JSX_CODE_MOD: elementClasses="test" *\/
  *   <MyComponent
+ *      /* METAL_JSX_CODE_MOD: elementClasses="test" *\/
  *      items={[
  *         /* METAL_JSX_CODE_MOD: elementClasses="baz" *\/
  *         {

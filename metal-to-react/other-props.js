@@ -1,5 +1,4 @@
 /**
- * A transform that converts the helper 'this.otherProps()'
  *
  * It should convert this:
  *

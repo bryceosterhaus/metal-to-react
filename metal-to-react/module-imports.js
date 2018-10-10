@@ -1,6 +1,4 @@
 /**
- * A transform that converts imported metal packages or adds a comment to
- * alert the user to verify the import.
  *
  * It should convert this:
  *

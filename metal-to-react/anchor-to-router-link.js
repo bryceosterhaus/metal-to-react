@@ -1,5 +1,4 @@
 /**
- * A transform that converts anchor elements to router Link
  *
  * It should convert this:
  *

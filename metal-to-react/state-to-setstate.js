@@ -1,5 +1,4 @@
 /**
- * A transform that converts this.state assignments to this.setState
  *
  * It should convert this:
  *

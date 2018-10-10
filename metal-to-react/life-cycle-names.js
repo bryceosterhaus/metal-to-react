@@ -1,6 +1,4 @@
 /**
- * A transform that converts metal lifecycle names to react lifecycles
- * and for any lifecycle that does not map one-to-one, prepend "FIXME_".
  *
  * It should convert this:
  *
@@ -22,6 +20,7 @@
  *
  */
 
+import {addComment} from './utils/addComment';
 import {NEW_LINE_STRING, regexReplaceNewLine} from './utils/newline';
 
 const NAME_MAP = {
@@ -44,35 +43,40 @@ module.exports = (file, api) => {
 	const root = j(file.source);
 	const addedCounts = new Map();
 
-	root.find(j.ClassDeclaration).forEach(path => {
-		const {node} = path.parent;
+	root.find(j.MethodDefinition).forEach(path => {
+		const {node} = path;
+		const name = node.key.name;
 
-		j(path)
-			.find(j.MethodDefinition)
-			.forEach(({node}) => {
-				const name = node.key.name;
+		if (NAME_MAP.hasOwnProperty(name)) {
+			node.key.name =
+				NAME_MAP[name] === true ? 'FIXME_' + name : NAME_MAP[name];
 
-				if (NAME_MAP.hasOwnProperty(name)) {
-					node.key.name =
-						NAME_MAP[name] === true
-							? 'FIXME_' + name
-							: NAME_MAP[name];
+			if (NAME_MAP[name] === 'constructor') {
+				node.value.params.push(j.identifier('props'));
 
-					if (NAME_MAP[name] === 'constructor') {
-						node.value.params.push(j.identifier('props'));
+				const superExpression = j.expressionStatement(
+					j.callExpression(j.identifier('super'), [
+						j.identifier('props')
+					])
+				);
 
-						const superExpression = j.expressionStatement(
-							j.callExpression(j.identifier('super'), [
-								j.identifier('props')
-							])
-						);
+				node.value.body.body.unshift(NEW_LINE_STRING);
 
-						node.value.body.body.unshift(NEW_LINE_STRING);
+				node.value.body.body.unshift(superExpression);
 
-						node.value.body.body.unshift(superExpression);
-					}
-				}
-			});
+				j(path)
+					.find(j.MemberExpression, {
+						property: {name: 'setState'}
+					})
+					.forEach(path =>
+						addComment(
+							j,
+							path.node,
+							'`setState` not allowed in constructor'
+						)
+					);
+			}
+		}
 	});
 
 	const source = root.toSource({

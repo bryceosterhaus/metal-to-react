@@ -1,5 +1,4 @@
 /**
- * A transform that converts class attribute to className
  *
  * It should convert this:
  *

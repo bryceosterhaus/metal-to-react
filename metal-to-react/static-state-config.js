@@ -1,6 +1,4 @@
 /**
- * A transform that converts object-assigned PROPS configuraiton
- * to class-based static initialized configuration. In other words...
  *
  * It should convert this:
  *
