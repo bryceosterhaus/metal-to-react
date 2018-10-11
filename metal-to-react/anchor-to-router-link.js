@@ -13,7 +13,7 @@
 module.exports = (file, api) => {
 	const j = api.jscodeshift;
 	const root = j(file.source);
-	const addedLink = false;
+	let addedLink = false;
 
 	root.find(j.JSXElement, {openingElement: {name: {name: 'a'}}}).forEach(
 		path => {
