@@ -31,11 +31,11 @@ const NAME_MAP = {
 	prepareStateForRender: 'getDerivedStateFromProps',
 	rendered: 'componentDidUpdate',
 	shouldUpdate: 'shouldComponentUpdate',
-	willAttach: true,
+	willAttach: 'UNSAFE_componentWillMount',
 	willDetach: 'componentWillUnmount',
-	willReceiveProps: true,
+	willReceiveProps: 'UNSAFE_componentWillReceiveProps',
 	willReceiveState: true,
-	willUpdate: true
+	willUpdate: 'UNSAFE_componentWillUpdate'
 };
 
 module.exports = (file, api) => {
