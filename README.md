@@ -13,7 +13,7 @@ This repo is a proof of concept to see how difficult is to migrate from metal-js
     - `willAttach`, `willReceiveProps`, `willUpdate` have 1-for-1 equivalents but they are soon to be deprecated and considered unsafe.
     - All `sync{PROP_NAME}` methods must also be manually migrated. Using either `getDerivedStateFromProps` or `UNSAFE_componentWillReceiveProps` from react.
 4. Any 3rd party metal-jsx package needs to be removed and migrated over.
-    - POSSIBLE_SOLUTION: Create some sort of bridge component that allows use of metal-jsx inside of react.
+    - POSSIBLE_SOLUTION: Create some sort of bridge component that allows use of metal-jsx inside of react. [Codesandbox Example](https://codesandbox.io/s/2zwj4oo49j)
 5. The context API is much different in react, this requires manual migration to the new context API.
     - POSSIBLE_SOLUTION: Create a simple guide for what that migration would look like.
 6. Fixing any `style` attributes on jsx requires manual migration to using [react's format for style](https://reactjs.org/docs/dom-elements.html#style)
