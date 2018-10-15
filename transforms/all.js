@@ -16,7 +16,7 @@ const files = [
 	'state-to-setstate',
 	'anchor-to-router-link',
 	'remove-static-state',
-	'element-classes-comments'
+	'element-classes'
 ];
 
 async function run(file) {

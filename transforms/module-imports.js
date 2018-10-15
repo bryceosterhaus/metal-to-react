@@ -20,8 +20,7 @@ import {addComment} from './utils/addComment';
 
 const NAME_MAP = {
 	'metal-jsx': 'react',
-	'metal-redux': 'react-redux',
-	'metal-dom': 'react-dom'
+	'metal-redux': 'react-redux'
 };
 
 module.exports = (file, api) => {
