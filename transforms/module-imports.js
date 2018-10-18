@@ -2,15 +2,12 @@
  *
  * It should convert this:
  *
- *   import Chart from 'metal-charts';
  *   import Component, {Config} from 'metal-jsx';
  *   import {connect} from 'metal-redux;
  *
  * To this:
  *
  *   import {PropTypes} from "prop-types";
- *   /* CODE_MOD: CHECK IMPORT BELOW
- *   import Chart from 'metal-charts';
  *   import React from "react";
  *   import {connect} from "react-redux";
  *
