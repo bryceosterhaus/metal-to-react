@@ -6,6 +6,8 @@ This repo is a proof of concept to see how difficult is to migrate from metal-js
 
 The goal is for the [jscodeshift](https://github.com/facebook/jscodeshift) transforms to do ~90% of the work. The remaining 10% is likely specific application code that can't be converted 1-to-1 from metal to react.
 
+**Note:** If you are using [decorators](https://babeljs.io/docs/en/babel-plugin-proposal-decorators) in your code base, you will need to install and run [this branch](https://github.com/bryceosterhaus/jscodeshift/tree/decoratorsPlugin) for jscodeshift to work properly.
+
 ## How to use Transforms
 
 1. Run all transforms on codebase. `node ${TRANSFORMS_DIR}/all.js` in the directory you want to run the transforms against.
