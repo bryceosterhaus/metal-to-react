@@ -13,8 +13,6 @@
  *
  */
 
-import {addComment} from './utils/addComment';
-
 const NAME_MAP = {
 	'metal-jsx': 'react',
 	'metal-redux': 'react-redux'
@@ -71,8 +69,6 @@ module.exports = (file, api) => {
 			}
 
 			node.source.value = NAME_MAP[node.source.value];
-		} else if (node.source.value.match(/metal\-.*/)) {
-			addComment(j, node, 'CHECK IMPORT BELOW');
 		}
 	});
 
