@@ -2,6 +2,11 @@
 
 This repo is a proof of concept to see how difficult is to migrate from metal-jsx to react.
 
+Tested on:
+`macOS: v10.12.6`
+`node: v11.8.0`
+`npm: v6.5.0`
+
 ## What do the transforms do?
 
 The goal is for the [jscodeshift](https://github.com/facebook/jscodeshift) transforms to do ~90% of the work. The remaining 10% is likely specific application code that can't be converted 1-to-1 from metal to react.
