@@ -16,7 +16,9 @@ const files = [
 	'state-to-setstate',
 	'anchor-to-router-link',
 	'remove-static-state',
-	'element-classes'
+	'element-classes',
+	'remove-setstate-from-constructor',
+	'test-constructor-to-jsx'
 ];
 
 async function run(file) {
