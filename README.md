@@ -11,7 +11,7 @@ Tested on:
 
 The goal is for the [jscodeshift](https://github.com/facebook/jscodeshift) transforms to do ~90% of the work. The remaining 10% is likely specific application code that can't be converted 1-to-1 from metal to react.
 
-**Note:** If you are using [decorators](https://babeljs.io/docs/en/babel-plugin-proposal-decorators) in your code base, you will need to install and run [this branch](https://github.com/bryceosterhaus/jscodeshift/tree/decoratorsPlugin) for jscodeshift to work properly.
+**Note:** If you are using [decorators](https://babeljs.io/docs/en/babel-plugin-proposal-decorators) in your code base, you will need to install and run [this branch](https://github.com/bryceosterhaus/jscodeshift/tree/decoratorsPlugin) for jscodeshift to work properly. Do this by cloning [this](https://github.com/bryceosterhaus/jscodeshift/tree/decoratorsPlugin), and run `npm install && npm install -g .` in that repo.
 
 ## How to use Transforms
 
