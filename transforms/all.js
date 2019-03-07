@@ -18,7 +18,9 @@ const files = [
 	'remove-static-state',
 	'element-classes',
 	'remove-setstate-from-constructor',
-	'test-constructor-to-jsx'
+	'test-constructor-to-jsx',
+	'omit-defined-props',
+	'add-element-ref'
 ];
 
 async function run(file) {
